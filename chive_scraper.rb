@@ -21,6 +21,9 @@ image = dar_page.css('section.post-content img').each do |i|
  elsif str.include? ".png"
  	img = str.slice(0..(str.index('.p')))
  	img = img + 'png'
+ elsif str.include? ".gif"
+ 	img = str.slice(0..(str.index('.g')))
+ 	img = img + 'gif' 	
  end
 
  agent.get(img).save
