@@ -7,7 +7,11 @@ page = Nokogiri::HTML(open(url))
 
 post_url = page.css('article.category-dar a')[0]['href']
 
+puts "found dar"
+
 dar_page = Nokogiri::HTML(open(post_url))
+
+puts "opened dar"
 
 agent = Mechanize.new
 
