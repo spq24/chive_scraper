@@ -1,6 +1,13 @@
 require 'open-uri'
 require 'nokogiri'
 require 'mechanize'
+require "./chive_delete.rb"
+
+
+directory = Dir.pwd
+
+delete_files(directory)
+
 
 url = "http://thechive.com/"
 page = Nokogiri::HTML(open(url))
@@ -31,5 +38,7 @@ image = dar_page.css('section.post-content img').each do |i|
  end
 
  agent.get(img).save
+
+ puts "Added image #{i}"
 
 end
